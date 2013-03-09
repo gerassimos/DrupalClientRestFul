@@ -50,7 +50,7 @@ public class CreateFile {
 			String cookie =obj.getString("session_name") + "="+ obj.getString("sessid");
 			System.out.println(cookie);
 
-			String filePath = "/home/gerassimos/Pictures/examples/w6.jpg";
+			String filePath = "/home/gerassimos/Pictures/examples/w7.jpg";
 			File imageFile =new File(filePath);
 
 			byte[] binaryData = new byte[(int) imageFile.length()];
@@ -108,6 +108,18 @@ public class CreateFile {
 			System.out.println("Output from Server .... \n");
 			System.out.println(objNodeCreated.toString());
 
+			//TODO
+			//Not working after updated to drupal 7.20
+			// Refer to http://drupal.org/drupal-7.20-release-notes
+			//must append user token after the url
+			//example 
+			
+			//As an example, links that previously pointed to a URL like 
+			// http://example.com/sites/default/files/styles/thumbnail/public/field/image/example.png will 
+			//now point to  a URL like 
+			//http://example.com/sites/default/files/styles/thumbnail/public/field/image/example.png?itok=zD_VaCaD.
+			  
+			  
 			HttpGet requestGenImageStyle = new HttpGet("http://localhost/d7r/sites/default/files/styles/full_blog_image/public/blog_images/"+imageFile.getName());
 
 			HttpResponse response3 = httpClient.execute(requestGenImageStyle);
