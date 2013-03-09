@@ -50,7 +50,7 @@ public class CreateFile {
 			String cookie =obj.getString("session_name") + "="+ obj.getString("sessid");
 			System.out.println(cookie);
 
-			String filePath = "/home/gerassimos/Pictures/examples/w2.jpg";
+			String filePath = "/home/gerassimos/Pictures/examples/w6.jpg";
 			File imageFile =new File(filePath);
 
 			byte[] binaryData = new byte[(int) imageFile.length()];
@@ -93,19 +93,20 @@ public class CreateFile {
 			
 			
 			
-//			httppost.setEntity(seFile);
-//			HttpResponse response2 = httpClient.execute(httppost);
-//
-//
-//			if (response2.getStatusLine().getStatusCode() != 200) {
-//				throw new RuntimeException("Failed : HTTP error code : "
-//						+ response2.getStatusLine().getStatusCode());
-//			}
-//			String response2Str = EntityUtils.toString(response2.getEntity());
-//			// save the sessid and session_name
-//			JSONObject objNodeCreated = new JSONObject(response2Str);
-//			System.out.println("Output from Server .... \n");
-//			System.out.println(objNodeCreated.toString());
+			httppost.setEntity(seFile);
+			HttpResponse response2 = httpClient.execute(httppost);
+
+
+			if (response2.getStatusLine().getStatusCode() != 200) {
+				throw new RuntimeException("Failed : HTTP error code : "
+						+ response2.getStatusLine().getStatusCode());
+			}
+			
+			String response2Str = EntityUtils.toString(response2.getEntity());
+			// save the sessid and session_name
+			JSONObject objNodeCreated = new JSONObject(response2Str);
+			System.out.println("Output from Server .... \n");
+			System.out.println(objNodeCreated.toString());
 
 			HttpGet requestGenImageStyle = new HttpGet("http://localhost/d7r/sites/default/files/styles/full_blog_image/public/blog_images/"+imageFile.getName());
 

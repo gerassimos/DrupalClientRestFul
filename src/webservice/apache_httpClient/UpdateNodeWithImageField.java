@@ -63,12 +63,12 @@ public class UpdateNodeWithImageField {
 			
 			
 			JSONObject fileJSONObject= new JSONObject();
-			fileJSONObject.put("fid", "5");
-			fileJSONObject.put("filename", "public://w1.jpg");
-			fileJSONObject.put("uri", "public://blog_images/w1.jpg");
-			fileJSONObject.put("filemime", "image/jpeg");
-			fileJSONObject.put("filesize", "1351882412");
-			fileJSONObject.put("status", "1");
+			fileJSONObject.put("fid", "28");
+//			fileJSONObject.put("filename", "public://w1.jpg");
+//			fileJSONObject.put("uri", "public://blog_images/w1.jpg");
+//			fileJSONObject.put("filemime", "image/jpeg");
+//			fileJSONObject.put("filesize", "1351882412");
+//			fileJSONObject.put("status", "1");
 			
 			JSONArray jsonArray = new JSONArray();
 			jsonArray.put(fileJSONObject);
